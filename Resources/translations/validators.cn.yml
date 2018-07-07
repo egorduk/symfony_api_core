@@ -1,0 +1,100 @@
+core_user:
+  username:
+    already_used: 'The username is already used'
+    blank: 'Please enter a username'
+  email:
+    already_used: 'The email is already used'
+    blank: 'Please enter an email'
+    invalid: 'The email is not valid'
+  firstname:
+    blank: 'Please enter your firstname'
+  lastname:
+    blank: 'Please enter your lastname'
+  country:
+    restricted: '%country% has restricted access to our services. For more information please refer to the "Terms of use".'
+    blank: 'Please select your country'
+  password:
+    blank: 'Please enter a password'
+    short: '[-Inf,Inf]The password is too short'
+    long: '[-Inf,Inf]The password is too long'
+    mismatch: 'The entered passwords don''t match'
+  new_password:
+    blank: 'Please enter a new password'
+    short: '[-Inf,Inf]The new password is too short'
+  current_password:
+    invalid: 'The entered password is invalid'
+  group:
+    blank: 'Please enter a name'
+    short: '[-Inf,Inf]The name is too short'
+    long: '[-Inf,Inf]The name is too long'
+  two_factor:
+    invalid: 'Your entered 2FA authentication code was incorrect.'
+  birthdate:
+    blank: 'Please enter birth date'
+    invalid: 'Birthdate is not valid'
+  city:
+    blank: 'Please enter city'
+  phone:
+    blank: 'Please enter your phone number'
+  zip:
+    blank: 'Please enter postal code'
+  address:
+    blank: 'Please enter address'
+core_business_info:
+  company_name:
+    blank: 'Please enter company name'
+  vat_id:
+    blank: 'Please enter TAX/VAT id'
+  registration_number:
+    blank: 'Please enter registration number'
+  country:
+    blank: 'Pleaser select your country'
+  state:
+    blank: 'Please enter state/province'
+  city:
+    blank: 'Please enter city/town'
+  street:
+    blank: 'Please enter street name'
+  building:
+    blank: 'Please enter building name/house number'
+  zip_code:
+    blank: 'Please enter postal/zip code'
+  office_number:
+    blank: 'Please enter office number'
+  company_details:
+    blank: 'Please submit all the documents'
+core_attachment:
+  file:
+    blank: 'Please upload a file'
+    mime_type: 'Please upload a valid document file'
+core_trade:
+  buy_amount:
+    blank: 'An amount cannot be blank.'
+  amount:
+    zero_or_negative: 'Amount must be greater than 0.'
+  sell_amount:
+    blank: 'An amount cannot be blank.'
+  market:
+    empty: 'We could not place instant order as the market is empty, place a limit order.'
+  balance:
+    not_enough: 'Not enough available balance'
+  price:
+    blank: 'Price field cannot be blank.'
+    zero_or_negative: 'Price must be greater than 0.'
+core_user_data:
+  firstname:
+    blank: 'Firstname cannot be blank.'
+  lastname:
+    blank: 'Lastname cannot be blank.'
+  phone:
+    blank: 'Phone number cannot be blank.'
+  birthdate:
+    blank: 'Birthdate cannot be blank.'
+  address:
+    blank: 'Address field cannot be blank.'
+  city:
+    blank: 'City field cannot be blank.'
+  zip_code:
+    blank: 'Zip Code field cannot be blank.'
+  accept_terms:
+    accepted: 'You must agree on terms and conditions.'

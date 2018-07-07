@@ -1,0 +1,100 @@
+core_user:
+  username:
+    already_used: 'O nome de usuário já existe'
+    blank: 'Por favor, digite nome de usuário'
+  email:
+    already_used: 'E-mail já existe'
+    blank: 'Por favor, entre o e-mail'
+    invalid: 'O e-mail não é válido'
+  firstname:
+    blank: 'Por favor, digite seu nome'
+  lastname:
+    blank: 'Por favor, digite seu sobrenome'
+  country:
+    restricted: '%country% tem acesso restringido aos nossos serviços. Mais informação em "Termos de Uso".'
+    blank: 'Por favor, escolha seu país'
+  password:
+    blank: 'Por favor, digite a senha'
+    short: '[-Inf,Inf]A senha é muito curta'
+    long: '[-Inf,Inf]A senha é muito longa'
+    mismatch: 'As senhas não coincidem'
+  new_password:
+    blank: 'Por favor, digite uma nova senha'
+    short: '[-Inf,Inf]A senha nova é muito curta'
+  current_password:
+    invalid: 'A senha não é valida'
+  group:
+    blank: 'Por favor, digite um nome'
+    short: '[-Inf,Inf]O nome é muito curto'
+    long: '[-Inf,Inf]O nome é muito longo'
+  two_factor:
+    invalid: 'Código 2FA de autenticação incorreto'
+  birthdate:
+    blank: 'Por favor, digite data de nascimento'
+    invalid: 'Data de nascimento não valida'
+  city:
+    blank: 'Por favor, digite cidade'
+  phone:
+    blank: 'Por favor, digite seu telefone'
+  zip:
+    blank: 'Por favor, digite CEP'
+  address:
+    blank: 'Por favor, digite endereço'
+core_business_info:
+  company_name:
+    blank: 'Por favor, digite nome da empresa'
+  vat_id:
+    blank: 'Por favor, digite CNPJ'
+  registration_number:
+    blank: 'Por favor, digite número de registro'
+  country:
+    blank: 'Por favor, escolha seu país'
+  state:
+    blank: 'Por favor, digite estado'
+  city:
+    blank: 'Por favor, digite cidade'
+  street:
+    blank: 'Por favor, digite nome de rua'
+  building:
+    blank: 'Por favor, digite nome do prédio/número da casa'
+  zip_code:
+    blank: 'Por favor, digite CEP'
+  office_number:
+    blank: 'Por favor, digite telefone comercial'
+  company_details:
+    blank: 'Por favor, envie todos os documentos'
+core_attachment:
+  file:
+    blank: 'Por favor, faça upload do arquivo'
+    mime_type: 'Por favor, faça upload de um arquivo válido'
+core_trade:
+  buy_amount:
+    blank: 'A quantidade não pode ficar em branco.'
+  amount:
+    zero_or_negative: 'A quantidade deve ser maior a 0'
+  sell_amount:
+    blank: 'A quantidade não pode ficar em branco.'
+  market:
+    empty: 'Não podemos fazer um pedido instantâneo porque o mercado está vazio, faça um pedido limitado.'
+  balance:
+    not_enough: 'Saldo insuficiente'
+  price:
+    blank: 'Campo do preço não pode estar em branco.'
+    zero_or_negative: 'Preço deve ser maior a 0.'
+core_user_data:
+  firstname:
+    blank: 'Nome não pode estar em branco.'
+  lastname:
+    blank: 'Sobrenome não pode estar em branco.'
+  phone:
+    blank: 'Telefone não pode estar em branco.'
+  birthdate:
+    blank: 'Data de nascimento não pode estar em branco.'
+  address:
+    blank: 'Enderço não pode estar em branco.'
+  city:
+    blank: 'Cidade não pode estar em branco.'
+  zip_code:
+    blank: 'CEP não pode estar em branco.'
+  accept_terms:
+    accepted: 'Você deve concordar com os termos e condições.'

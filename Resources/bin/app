@@ -1,0 +1,79 @@
+#!/bin/sh
+
+help() {
+    echo "Description: Some handful commands to ease the market integration suite running"
+    echo "    NOTE: all commands runs in dev environment"
+    echo ""
+    echo "Usage: ./bin/market mode [arguments]"
+    echo "  mode:"
+    echo "    demo            reloads application database and loads demo data."
+    echo "    reload          reload application database."
+    echo "  arguments:        any additional arguments or options to the command which will run."
+    echo "  examples:"
+    echo "    bin/market reload -e dev"
+    echo "    bin/market demo"
+}
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+CLI="$DIR/../app/console"
+ROOT="$DIR/.."
+if [ ! -f "$CLI" ]; then
+    CLI="$DIR/../../console"
+    ROOT="$DIR/../../.."
+fi
+
+demo() {
+    php $CLI demo:data $1
+}
+
+reload() {
+    # Bootstrap cache
+    php $ROOT/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
+
+    # Database
+    php $CLI doctrine:database:drop --force --quiet $1
+    php $CLI doctrine:database:create $1
+    php $CLI doctrine:migrations:migrate --no-interaction $1 # run migrations
+
+    # Fixtures
+    php $CLI core:fixtures:load $1
+
+    # App Cache
+    php $CLI common:cache:clear $1
+
+    # Clear all redis cache, including ticker
+    redis-cli --raw FLUSHALL
+
+    # rebuild
+    gulp build
+
+    # symfony cache
+    php $CLI cache:clear $1
+    php $CLI cache:warmup $1
+}
+
+if [ $# -lt 1 ]; then
+    help
+    exit 1
+fi
+
+MODE="$(echo $@ | awk '{print $1;}')"
+ARGS="$(echo $@ | awk '{first = $1; $1 = ""; print $0;}' | sed 's/^\s//')"
+
+case "$MODE" in
+  reload)
+        reload "$ARGS"
+        ;;
+  demo)
+        reload "$ARGS" # args can be only env
+        demo "$ARGS"
+        ;;
+  *)
+        help
+        exit 1
+esac
+
+exit 0
+
+

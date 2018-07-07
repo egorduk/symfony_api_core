@@ -1,0 +1,15 @@
+services:
+  core.entity_repository.factory:
+    class: Btc\CoreBundle\Factory\EntityRepositoryFactory
+    arguments: [%entity_repositories%]
+
+  core.password_encoder:
+    class: Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder
+    arguments: [10] # cost
+
+  core.generator:
+    class: Btc\CoreBundle\Util\Generator
+
+  core.user_registration_service:
+    class: Btc\CoreBundle\Service\UserRegistrationService
+    arguments: [@security.encoder_factory, @core.generator, @doctrine.orm.entity_manager]
